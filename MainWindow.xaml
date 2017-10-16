@@ -5,35 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoExplorer"
         mc:Ignorable="d"
-        Title="Crypto Explorer" Height="534.6" Width="697.6">
+        Title="Crypto Explorer" Height="577.159" Width="697.6">
     <Grid HorizontalAlignment="Center" Height="482" Margin="20,10,0,0" VerticalAlignment="Top" Width="651">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="650*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="482" Margin="-16,0,0,0" VerticalAlignment="Top" Width="667" Grid.ColumnSpan="2">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="529" Margin="-16,0,0,-47" VerticalAlignment="Top" Width="667" Grid.ColumnSpan="2">
+            <TabItem Header="Bitwise Operations">
+                <Grid Background="AliceBlue" Margin="0,0,-0.4,-0.4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="53*"/>
+                        <ColumnDefinition Width="155*"/>
+                        <ColumnDefinition Width="446*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBrowseBitwisePic1" Content="Browse Source" HorizontalAlignment="Left" Margin="285,47,0,0" VerticalAlignment="Top" Width="91" Height="18" Grid.Column="3" Click="btnBrowseBitwisePic1_Click"/>
+                    <TextBox x:Name="txtBitwisePic1FileName" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="27,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="3" Grid.Column="1"/>
+
+                    <Button x:Name="btnBrowseBitwisePic2" Content="Browse Key" HorizontalAlignment="Left" Margin="285,79,0,0" VerticalAlignment="Top" Width="91" Height="18" Grid.Column="3" Click="btnBrowseBitwisePic2_Click"/>
+                    <TextBox x:Name="txtBitwisePic2FileName" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="27,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="3" Grid.Column="1"/>
+
+                    <Button x:Name="btnComputeBO" Content="Manipulate Source" HorizontalAlignment="Left" Margin="312,315,0,0" VerticalAlignment="Top" Width="115" Height="19" Grid.Column="3" Click="btnComputeBO_Click"/>
+
+                    <RadioButton GroupName="rbBitwiseOperator" x:Name="rbBitwiseAnd" Content="AND" HorizontalAlignment="Left" Margin="335,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.868,0.382" Height="15" Width="63" Grid.Column="3"/>
+                    <RadioButton GroupName="rbBitwiseOperator" x:Name="rbBitwiseOR" Content="OR" HorizontalAlignment="Left" Margin="335,260,0,0" VerticalAlignment="Top" Height="15" Width="65" Grid.Column="3"/>
+                    <RadioButton GroupName="rbBitwiseOperator" x:Name="rbBitwiseXOR" Content="XOR" HorizontalAlignment="Left" Margin="335,284,0,0" VerticalAlignment="Top" Height="15" Width="65" Grid.Column="3"/>
+                    <Label x:Name="lblBitwiseOp" Content="Select Bitwise Operation" HorizontalAlignment="Left" Margin="299,199,0,0" VerticalAlignment="Top" Height="26" Width="142" Grid.Column="3"/>
+                    <Image x:Name="imgBitwiseDisplay" Height="349" Margin="0.2,117,157.4,0" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="5,13,0,0" TextWrapping="Wrap" Text="Bitwise Operators 101" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
+                    <Button x:Name="btnDisplayBitwiseSource" Content="Display Source" HorizontalAlignment="Left" Margin="318,160,0,0" VerticalAlignment="Top" Width="91" Height="18" Grid.Column="3" Click="btnDisplayBitwiseSource_Click"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Stream Ciphers">
-                <Grid Background="AliceBlue">
-                    <Button x:Name="btnBrowseSourcePic" Content="Browse Source" HorizontalAlignment="Left" Margin="493,18,0,0" VerticalAlignment="Top" Width="88" Click="btnBrowseSourcePic_Click" Height="18"/>
-                    <TextBox x:Name="txtFileNameSourcePic" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="27,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446"/>
-                    <Button x:Name="btnBrowseKeyStream" Content="Browse Key" HorizontalAlignment="Left" Margin="493,54,0,0" VerticalAlignment="Top" Width="88" Click="btnBrowseKeyStream_Click" Height="18"/>
-                    <TextBox x:Name="txtFileNameKeyStream" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="27,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446"/>
-                    <Button x:Name="btnEncryptDecryptStream" Content="Encrypt/Decrypt" HorizontalAlignment="Left" Margin="535,140,0,0" VerticalAlignment="Top" Width="106" Click="btnEncryptDecryptStream_Click" Height="19"/>
-                    <Button x:Name="btnSaveStream" Content="Save" HorizontalAlignment="Left" Margin="535,178,0,0" VerticalAlignment="Top" Width="106" Click="btnSaveStream_Click" Height="19"/>
-                    <Image x:Name="imgDisplayStream" Height="349" Margin="72,85,145.6,0" VerticalAlignment="Top"/>
+                <Grid Background="AliceBlue" Margin="-1,0,0.6,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="99*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="536*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBrowseSourcePic" Content="Browse Source" HorizontalAlignment="Left" Margin="362.6,65,0,0" VerticalAlignment="Top" Width="88" Click="btnBrowseSourcePic_Click" Height="18" Grid.Column="3"/>
+                    <TextBox x:Name="txtFileNameSourcePic" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="1.649,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Button x:Name="btnBrowseKeyStream" Content="Browse Key" HorizontalAlignment="Left" Margin="362.6,101,0,0" VerticalAlignment="Top" Width="88" Click="btnBrowseKeyStream_Click" Height="18" Grid.Column="3"/>
+                    <TextBox x:Name="txtFileNameKeyStream" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="1.649,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Button x:Name="btnEncryptDecryptStream" Content="Encrypt/Decrypt" HorizontalAlignment="Left" Margin="404.6,187,0,0" VerticalAlignment="Top" Width="106" Click="btnEncryptDecryptStream_Click" Height="19" Grid.Column="3"/>
+                    <Button x:Name="btnSaveStream" Content="Save" HorizontalAlignment="Left" Margin="404.6,225,0,0" VerticalAlignment="Top" Width="106" Click="btnSaveStream_Click" Height="19" Grid.Column="3"/>
+                    <Image x:Name="imgDisplayStream" Height="349" Margin="46.649,132,150.4,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="111.6,20,0,0" TextWrapping="Wrap" Text="Stream Cipher Reuse Attack" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Block Ciphers">
                 <Grid Background="AliceBlue" Margin="0,0,-0.4,-0.4">
-                    <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Margin="485,26,0,0" VerticalAlignment="Top" Width="75" Click="btnBrowse_Click" Height="18"/>
-                    <Button x:Name="btnDecrypt" Content="Decrypt" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.679,-2.418" Click="btnDecrypt_Click" Height="19"/>
-                    <Button x:Name="btnEncrypt" Content="Encrypt" HorizontalAlignment="Left" Margin="33.2,65,0,0" VerticalAlignment="Top" Width="75" Click="btnEncrypt_Click" Grid.Column="2" Height="19"/>
-                    <TextBox x:Name="txtFileName" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="19,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="53*"/>
+                        <ColumnDefinition Width="155*"/>
+                        <ColumnDefinition Width="446*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Margin="284.713,54,0,0" VerticalAlignment="Top" Width="75" Click="btnBrowse_Click" Height="18" Grid.Column="3"/>
+                    <Button x:Name="btnDecrypt" Content="Decrypt" HorizontalAlignment="Left" Margin="80.2,93,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.679,-2.418" Click="btnDecrypt_Click" Height="19" Grid.Column="2"/>
+                    <Button x:Name="btnEncrypt" Content="Encrypt" HorizontalAlignment="Left" Margin="41,93,0,0" VerticalAlignment="Top" Width="75" Click="btnEncrypt_Click" Height="19" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="txtFileName" IsReadOnly="True" HorizontalAlignment="Left" Height="19" Margin="27,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="446" Grid.ColumnSpan="3" Grid.Column="1"/>
 
-                    <RadioButton GroupName="rbEncryptionMode" x:Name="rbEncryptionModeECB" IsChecked="True" Content="AES ECB" HorizontalAlignment="Left" Margin="374,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.868,0.382" Height="15" Width="63"/>
-                    <RadioButton GroupName="rbEncryptionMode" x:Name="rbEncryptionModeCBC" Content="AES CBC" HorizontalAlignment="Left" Margin="465,67,0,0" VerticalAlignment="Top" Height="15" Width="65"/>
-                    <Label x:Name="label" Content="Encryption Mode:" HorizontalAlignment="Left" Margin="252,62,0,0" VerticalAlignment="Top" Height="26" Width="104"/>
-                    <Image x:Name="imgDisplay" Height="349" Margin="108,109,110,0" VerticalAlignment="Top"/>
+                    <RadioButton GroupName="rbEncryptionMode" x:Name="rbEncryptionModeECB" IsChecked="True" Content="AES ECB" HorizontalAlignment="Left" Margin="173.713,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.868,0.382" Height="15" Width="63" Grid.Column="3"/>
+                    <RadioButton GroupName="rbEncryptionMode" x:Name="rbEncryptionModeCBC" Content="AES CBC" HorizontalAlignment="Left" Margin="264.713,95,0,0" VerticalAlignment="Top" Height="15" Width="65" Grid.Column="3"/>
+                    <Label x:Name="label" Content="Encryption Mode:" HorizontalAlignment="Left" Margin="51.713,90,0,0" VerticalAlignment="Top" Height="26" Width="104" Grid.Column="3"/>
+                    <Image x:Name="imgDisplay" Height="349" Margin="63.2,137,94.4,0" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="140.2,17,0,0" TextWrapping="Wrap" Text="Frequency Analysis on Block Cipher modes" VerticalAlignment="Top" FontSize="14" Grid.Column="2" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Padding Oracle" HorizontalAlignment="Left" Height="20" VerticalAlignment="Bottom" Width="93" Margin="-2.2,-2,-36.4,2">
+                <Grid Background="#FFE5E5E5">
+                    <Grid Background="AliceBlue" Margin="0,0,-0.4,-0.4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="53*"/>
+                            <ColumnDefinition Width="602*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnAttack" Content="Attack!" HorizontalAlignment="Left" Margin="215.2,109,0,0" VerticalAlignment="Top" Width="75" Height="18" Grid.Column="2" Click="btnAttack_Click" TabIndex="17"/>
+                        <TextBox x:Name="txtBaseUrl" Text="http://localhost.:1337/Home/Decrypt?secret=" HorizontalAlignment="Left" Height="19" Margin="25.2,54,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="557" Grid.Column="2" TabIndex="15"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="161.2,18,0,0" TextWrapping="Wrap" Text="Padding Oracle Attack" VerticalAlignment="Top" FontSize="14" Grid.Column="2"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="9,54,0,0" TextWrapping="Wrap" Text="Base URL" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="64"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="9,82,0,0" TextWrapping="Wrap" Text="Cipher Hex" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="64"/>
+                        <TextBox x:Name="txtCipherHex" Text="" HorizontalAlignment="Left" Height="19" Margin="25.2,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="557" Grid.Column="2" TabIndex="16"/>
+                        <TextBox x:Name="txtOracleLogSummary" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="256" Margin="33,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="602" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="33,131,0,0" TextWrapping="Wrap" Text="Attack log" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="125"/>
+                        <Label Content="Decrypted text" Grid.Column="1" HorizontalAlignment="Left" Margin="29,409,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.03,0.457" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtDecryptedText" Grid.Column="1" HorizontalAlignment="Left" Height="51" Margin="33,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="602" Grid.ColumnSpan="2" FontSize="16" Foreground="#FFE82222"/>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
